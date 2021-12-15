@@ -1,0 +1,65 @@
+* Manta C211 Buyruk Testi
+* 2021 
+
+* ************TEST-1*****************
+* Veri belleğine okuma ve yazma gerçekleştiren
+* buyrukların testi
+* 
+* İYÜKLE ZC 0xCC
+* İYÜKLE Z3 0x05
+* YAZ ZC Z3 * VERİ, ADRES (BELLEK[5] = 0xCC)
+* OKU Z6 Z3 * HEDEF, ADRES (Z6 = BELLEK[5])
+
+* ************TEST-2*****************
+* Koşullu ve koşulsuz atlama buyruklarının testi
+* 
+* İYÜKLE Z8 0x08
+* İYÜKLE Z5 0x05
+* İÇIKAR Z8 0x01
+* KIYASLA Z8 Z5 * Z8 = Z5 İSE, SIFIR BAYRAĞI = 1
+*               * Z8 < Z5 İSE, ELDE BAYRAĞI = 1 
+* ATLAS 0x007 * SIFIR BAYRAĞI = 1 İSE, ATLA
+* ATLAE 0x009 * ELDE BAYRAĞI = 1 İSE, ATLA
+* ATLA 0x002 * KOŞULSUZ ATLA
+* 
+* İYÜKLE ZF 0xFF
+* ATLA 0x002
+* 
+* İYÜKLE ZE 0xEE
+
+* ************TEST-3*****************
+* Genel buyrukların testi
+* 
+* İYÜKLE Z4 0x02 * Z4 = 2
+* İYÜKLE Z2 0x03 * Z2 = 3
+* TOPLA Z2 Z4 * Z2 = 5
+* İTOPLA Z2 0x01 * Z2 = 6
+* ÇIKIŞ Z2 * ÇIKIŞ = 6
+* GİRİŞ Z6 * Z6 = GİRİŞ(0x2F)
+* ÇIKAR Z2 Z4 * Z2 = 4
+* İÇIKAR Z2 0x04 * Z2 = 0 
+* İÇIKIŞ 0xFF * ÇIKIŞ = 0xFF
+* VE Z6 Z4 * Z6 = 2
+* İYÜKLE Z5 0xC5 * Z5 = 0xC5
+* VEYA Z2 Z5 * Z2 = 0xC5
+* XOR Z6 Z5 * Z6 = 0xC7
+* İYÜKLE ZF 0x06 * ZF = 0x06 
+* SOLKAYDIR ZF Z4 * ZF = 0x18 
+* SAĞKAYDIR ZF Z4 * ZF = 0x06
+* KIYASLA Z4 Z6 * ELDE BAYRAĞI = 1
+* İYÜKLE Z2 0xC7 * Z2 = 0xC7
+* KIYASLA Z2 Z6 * SIFIR BAYRAĞI = 1
+* İTOPLA Z2 0x06 * Z2 = 0xCD
+* İKIYASLA Z2 0xCD * SIFIR BAYRAĞI = 1
+* İKIYASLA Z2 0xFD * ELDE BAYRAĞI = 1
+
+* ************TEST-4*****************
+* Sözde buyrukların testi
+* Sözde buyrukların doğrudan donanımda karşılığı yoktur.
+* Çevirici bu buyrukları, var olan eşdeğer buyruklara dönüştürür.
+*
+* ARTIR Z1
+* TEMİZLE ZF
+* AZALT Z2
+* GEÇ
+* SONLANDIR

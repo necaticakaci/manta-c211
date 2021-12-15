@@ -1,0 +1,7 @@
+* Manta C211 Buton-Led Örneği
+* 2021
+İYÜKLE Z0 0xFF
+GİRİŞ Z2
+XOR Z2 Z0
+ÇIKIŞ Z2
+ATLA 0x001
