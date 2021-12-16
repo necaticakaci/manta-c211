@@ -7,9 +7,9 @@ use WORK.MANTA.ALL;
 
 entity PROGRAM_BELLEGI is
 	port(	saat			: in std_logic;
-			pb_oku			: in std_logic;
-			pb_giris		: in std_logic_vector(adres_genisligi-1 downto 0);
-			pb_cikis		: out std_logic_vector(buyruk_genisligi-1 downto 0));
+		pb_oku			: in std_logic;
+		pb_giris		: in std_logic_vector(adres_genisligi-1 downto 0);
+		pb_cikis		: out std_logic_vector(buyruk_genisligi-1 downto 0));
 
 end PROGRAM_BELLEGI;
 
