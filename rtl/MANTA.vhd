@@ -5,19 +5,19 @@ use IEEE.STD_LOGIC_1164.all;
 
 package MANTA is
 
-constant veri_genisligi					: integer := 8;
-constant adres_genisligi				: integer := 10;
-constant vb_adres_genisligi				: integer := 8;
-constant buyruk_genisligi				: integer := 18;
-constant kaydedici_sayisi				: integer := 16;
+constant veri_genisligi				: integer := 8;
+constant adres_genisligi			: integer := 10;
+constant vb_adres_genisligi			: integer := 8;
+constant buyruk_genisligi			: integer := 18;
+constant kaydedici_sayisi			: integer := 16;
 constant program_bellegi_genisligi		: integer := 1024;
 constant veri_bellegi_genisligi			: integer := 256;
 constant giris_port_genisligi			: integer := 8;
 constant cikis_port_genisligi			: integer := 8;
 
 type buyruk is (YUKLE, IYUKLE, TOPLA, ITOPLA, ICIKIS, CIKIS, CIKAR,
-				ICIKAR, KIYASLA, IKIYASLA, ATLA, ATLAS, VE, VEYA, 
-				ZOR, GIRIS, YAZ, OKU, ATLAE, SAGKAYDIR, SOLKAYDIR);
+		ICIKAR, KIYASLA, IKIYASLA, ATLA, ATLAS, VE, VEYA, 
+		ZOR, GIRIS, YAZ, OKU, ATLAE, SAGKAYDIR, SOLKAYDIR);
 function coz(kod : std_logic_vector) return buyruk;
 
 end MANTA;
