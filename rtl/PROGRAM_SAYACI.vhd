@@ -7,10 +7,10 @@ use WORK.MANTA.ALL;
 
 entity PROGRAM_SAYACI is
 	port(	saat, reset		: in std_logic;
-			ps_say			: in std_logic;
-			ps_atla			: in std_logic;
-			ps_giris 		: in std_logic_vector(adres_genisligi-1 downto 0);
-			ps_cikis 		: out std_logic_vector(adres_genisligi-1 downto 0)); 
+		ps_say			: in std_logic;
+		ps_atla			: in std_logic;
+		ps_giris 		: in std_logic_vector(adres_genisligi-1 downto 0);
+		ps_cikis 		: out std_logic_vector(adres_genisligi-1 downto 0)); 
 			
 end PROGRAM_SAYACI;
 
