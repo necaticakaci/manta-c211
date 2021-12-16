@@ -6,22 +6,22 @@ use IEEE.NUMERIC_STD.ALL;
 use WORK.MANTA.ALL;
 
 entity ARITMETIK_MANTIK_BIRIMI is
-	port(	saat, reset			: in std_logic;
-			amb_oku				: in std_logic;
-			amb_ivedi			: in std_logic;
-			amb_isle			: in std_logic;
-			amb_islem_tip		: in std_logic_vector(3 downto 0);
-			amb_kd0_giris		: in std_logic_vector(veri_genisligi-1 downto 0);
-			amb_kd1_giris		: in std_logic_vector(veri_genisligi-1 downto 0);
-			amb_sabit_giris		: in std_logic_vector(veri_genisligi-1 downto 0);
-			amb_bayrak_sifir	: out std_logic;
-			amb_bayrak_elde		: out std_logic;
-			amb_sonuc_cikis		: out std_logic_vector(veri_genisligi-1 downto 0));
+	port(	saat, reset		: in std_logic;
+		amb_oku			: in std_logic;
+		amb_ivedi		: in std_logic;
+		amb_isle		: in std_logic;
+		amb_islem_tip		: in std_logic_vector(3 downto 0);
+		amb_kd0_giris		: in std_logic_vector(veri_genisligi-1 downto 0);
+		amb_kd1_giris		: in std_logic_vector(veri_genisligi-1 downto 0);
+		amb_sabit_giris		: in std_logic_vector(veri_genisligi-1 downto 0);
+		amb_bayrak_sifir	: out std_logic;
+		amb_bayrak_elde		: out std_logic;
+		amb_sonuc_cikis		: out std_logic_vector(veri_genisligi-1 downto 0));
 			
 end ARITMETIK_MANTIK_BIRIMI;
 
 architecture Behavioral of ARITMETIK_MANTIK_BIRIMI is
-	constant sifir 			: unsigned(veri_genisligi downto 0) := (others => '0');
+	constant sifir 		: unsigned(veri_genisligi downto 0) := (others => '0');
 	signal x_kaydedicisi	: unsigned(veri_genisligi downto 0);
 	signal y_kaydedicisi	: unsigned(veri_genisligi-1 downto 0);
 begin
