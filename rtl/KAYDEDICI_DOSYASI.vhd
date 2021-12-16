@@ -6,21 +6,21 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 use WORK.MANTA.ALL;
 
 entity KAYDEDICI_DOSYASI is
-	port(	saat, reset				: in std_logic;
-			kd_sabit_oku			: in std_logic;
-			kd_sonuc_oku			: in std_logic;
-			kd_port_oku				: in std_logic;
-			kd_bellek_oku			: in std_logic;	
-			kd_yaz					: in std_logic;
-			kd_ivedi				: in std_logic;
-			kd_buyruk_sabit_giris	: in std_logic_vector(veri_genisligi-1 downto 0);
-			kd_amb_sonuc_giris		: in std_logic_vector(veri_genisligi-1 downto 0);
-			kd_gcb_veri_giris		: in std_logic_vector(veri_genisligi-1 downto 0);
-			kd_vb_veri_giris		: in std_logic_vector(veri_genisligi-1 downto 0);
-			kd_kd0_giris			: in std_logic_vector(3 downto 0);
-			kd_kd1_giris			: in std_logic_vector(3 downto 0);
-			kd_kd0_cikis			: out std_logic_vector(veri_genisligi-1 downto 0);
-			kd_kd1_cikis			: out std_logic_vector(veri_genisligi-1 downto 0));
+	port(	saat, reset			: in std_logic;
+		kd_sabit_oku			: in std_logic;
+		kd_sonuc_oku			: in std_logic;
+		kd_port_oku			: in std_logic;
+		kd_bellek_oku			: in std_logic;	
+		kd_yaz				: in std_logic;
+		kd_ivedi			: in std_logic;
+		kd_buyruk_sabit_giris		: in std_logic_vector(veri_genisligi-1 downto 0);
+		kd_amb_sonuc_giris		: in std_logic_vector(veri_genisligi-1 downto 0);
+		kd_gcb_veri_giris		: in std_logic_vector(veri_genisligi-1 downto 0);
+		kd_vb_veri_giris		: in std_logic_vector(veri_genisligi-1 downto 0);
+		kd_kd0_giris			: in std_logic_vector(3 downto 0);
+		kd_kd1_giris			: in std_logic_vector(3 downto 0);
+		kd_kd0_cikis			: out std_logic_vector(veri_genisligi-1 downto 0);
+		kd_kd1_cikis			: out std_logic_vector(veri_genisligi-1 downto 0));
 
 end KAYDEDICI_DOSYASI;
 
@@ -45,7 +45,7 @@ kd_kd1_cikis <= kd1_kaydedicisi;
 					kd0_kaydedicisi <= kaydediciler(conv_integer(kd_kd0_giris));
 					kd1_kaydedicisi <= kaydediciler(conv_integer(kd_kd1_giris));
 				elsif kd_ivedi = '1' then
-						kd1_kaydedicisi <= kd_buyruk_sabit_giris;
+					kd1_kaydedicisi <= kd_buyruk_sabit_giris;
 				end if;
 			elsif kd_sonuc_oku = '1' then
 				kd1_kaydedicisi <= kd_amb_sonuc_giris;
