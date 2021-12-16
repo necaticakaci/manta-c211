@@ -5,38 +5,38 @@ use IEEE.STD_LOGIC_1164.ALL;
 use WORK.MANTA.ALL;
 
 entity DENETIM_BIRIMI is
-	port(	saat, reset			: in std_logic;
-			db_bayrak_sifir		: in std_logic;
-			db_bayrak_elde		: in std_logic;
-			db_buyruk 			: in buyruk;
-			db_pb_oku 			: out std_logic;
-			db_bc_oku			: out std_logic;
-			db_ps_say			: out std_logic;
-			db_ps_atla			: out std_logic;
-			db_kd_sabit_oku		: out std_logic;
-			db_kd_sonuc_oku		: out std_logic;
-			db_kd_port_oku		: out std_logic;
-			db_kd_bellek_oku	: out std_logic;
-			db_kd_yaz			: out std_logic;
-			db_kd_ivedi			: out std_logic;
-			db_amb_oku			: out std_logic;
-			db_amb_ivedi		: out std_logic;
-			db_amb_isle			: out std_logic;
-			db_amb_islem_tip	: out std_logic_vector(3 downto 0);
-			db_gcb_oku			: out std_logic;
-			db_gcb_yaz			: out std_logic;
-			db_gcb_ivedi		: out std_logic;
-			db_vb_oku			: out std_logic;
-			db_vb_yaz			: out std_logic);
+	port(	saat, reset		: in std_logic;
+		db_bayrak_sifir		: in std_logic;
+		db_bayrak_elde		: in std_logic;
+		db_buyruk 		: in buyruk;
+		db_pb_oku 		: out std_logic;
+		db_bc_oku		: out std_logic;
+		db_ps_say		: out std_logic;
+		db_ps_atla		: out std_logic;
+		db_kd_sabit_oku		: out std_logic;
+		db_kd_sonuc_oku		: out std_logic;
+		db_kd_port_oku		: out std_logic;
+		db_kd_bellek_oku	: out std_logic;
+		db_kd_yaz		: out std_logic;
+		db_kd_ivedi		: out std_logic;
+		db_amb_oku		: out std_logic;
+		db_amb_ivedi		: out std_logic;
+		db_amb_isle		: out std_logic;
+		db_amb_islem_tip	: out std_logic_vector(3 downto 0);
+		db_gcb_oku		: out std_logic;
+		db_gcb_yaz		: out std_logic;
+		db_gcb_ivedi		: out std_logic;
+		db_vb_oku		: out std_logic;
+		db_vb_yaz		: out std_logic);
 			
 end DENETIM_BIRIMI;
 
 architecture Behavioral of DENETIM_BIRIMI is
 	type durum is (	S0, S01, S1, S2, S3, S4, S5, S6, S7, S8, S9, S10, S11, 
-					S12, S13, S14, S15, S16, S17, S18, S19, S20, S21, S22, 
-					S23, S24, S25, S26, S27, S28, S29, S30, S31, S32, S33, 
-					S34, S35, S36, S37, S38, S39, S40, S41, S42, S43, S44, 
-					S45, S46, S47, S48, S49, S50);
+			S12, S13, S14, S15, S16, S17, S18, S19, S20, S21, S22, 
+			S23, S24, S25, S26, S27, S28, S29, S30, S31, S32, S33, 
+			S34, S35, S36, S37, S38, S39, S40, S41, S42, S43, S44, 
+			S45, S46, S47, S48, S49, S50);
 	signal simdiki_durum, sonraki_durum : durum;
 begin
 
@@ -49,25 +49,25 @@ begin
 	end process ana_dongu;
 	
 	islem_dongusu : process(simdiki_durum, db_buyruk, db_bayrak_sifir, db_bayrak_elde) is begin
-		db_pb_oku 			<= '0';
-		db_bc_oku 			<= '0';
-		db_ps_say			<= '0';
-		db_ps_atla			<= '0';
+		db_pb_oku 		<= '0';
+		db_bc_oku 		<= '0';
+		db_ps_say		<= '0';
+		db_ps_atla		<= '0';
 		db_kd_sabit_oku		<= '0';	
 		db_kd_sonuc_oku		<= '0';
 		db_kd_port_oku		<= '0';
 		db_kd_bellek_oku	<= '0';
-		db_kd_yaz			<= '0';	
-		db_kd_ivedi			<= '0';
-		db_amb_oku			<= '0';
+		db_kd_yaz		<= '0';	
+		db_kd_ivedi		<= '0';
+		db_amb_oku		<= '0';
 		db_amb_ivedi		<= '0';
-		db_amb_isle			<= '0';
+		db_amb_isle		<= '0';
 		db_amb_islem_tip	<= x"0";
-		db_gcb_oku			<= '0';
-		db_gcb_yaz			<= '0';
+		db_gcb_oku		<= '0';
+		db_gcb_yaz		<= '0';
 		db_gcb_ivedi		<= '0';
-		db_vb_oku			<= '0';
-		db_vb_yaz			<= '0';
+		db_vb_oku		<= '0';
+		db_vb_yaz		<= '0';
 		
 		case simdiki_durum is
 			when S0 =>
