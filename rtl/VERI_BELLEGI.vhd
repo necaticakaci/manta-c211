@@ -7,11 +7,11 @@ use WORK.MANTA.ALL;
 
 entity VERI_BELLEGI is
 	port( 	saat 			: in std_logic;
-			vb_oku			: in std_logic;
-			vb_yaz			: in std_logic;
-			vb_veri_giris	: in std_logic_vector(veri_genisligi-1 downto 0);
-			vb_adres_giris	: in std_logic_vector(vb_adres_genisligi-1 downto 0);
-			vb_veri_cikis	: out std_logic_vector(veri_genisligi-1 downto 0));
+		vb_oku			: in std_logic;
+		vb_yaz			: in std_logic;
+		vb_veri_giris		: in std_logic_vector(veri_genisligi-1 downto 0);
+		vb_adres_giris		: in std_logic_vector(vb_adres_genisligi-1 downto 0);
+		vb_veri_cikis		: out std_logic_vector(veri_genisligi-1 downto 0));
 			
 end VERI_BELLEGI;
 
